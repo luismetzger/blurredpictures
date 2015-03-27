@@ -1,0 +1,21 @@
+<script>
+  $('#blog .column > *').unwrap();
+  $('#blog .blog-single .content').columnize({width:340,height:330});
+  $("#blog .blog-single .content").css("width", $(".column").length*390);
+  $('#blog .blog-single').jScrollPane({showArrows: true}).data('jsp').destroy();
+  $('#blog .blog-single').jScrollPane({showArrows: true}).data('jsp').reinitialise();
+</script>
+<div class="blog-single">
+<div class="content">
+    <a class="close" ></a>
+    <h2>wordpress 10th anniversary</h2>
+    <span class="date">——<em>June 1, 2013</em>——</span>
+    <p>WordPress es la plataforma de gestión de contenidos en la web más popular y utilizada en todo el mundo, e inclusive el CMS más apreciado por millones.Hoy, WordPress cumple 10 años, una década mejorando la internet y en la cual ha crecido el modelo de negocio digital de una manera que muchos no creyeron posible.</p>
+
+<img src="http://yolive.me/wp-content/uploads/2013/06/10aniversario_wordpress.png" alt="10 aniversario de WordPress" width="340" height="340" />
+
+<p>WordPress fue creado por Matt Mullenweg y Mike Little en 2003 ya hace 10 años han pasado desde el lanzamiento de esta plataforma y muchos la hemos visto evolucionar y cambiar siempre para mejor. Sí, en varias ocasiones se ha visto envuelta en polémicas por fallos de seguridad, pero aún así ha logrado superarlos, mejorar y crecer siempre, e incluso oponerse a leyes de censura en internet.</p>
+
+<p>¡Feliz Aniversario, que vengan muchos más!</p>
+</div>
+</div>

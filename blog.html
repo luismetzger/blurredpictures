@@ -1,0 +1,156 @@
+<script>
+$(".entry").click(function() {
+_gaq.push(['_trackEvent', 'Blog', 'Entrada', $(this).attr("id-nav")]);
+        if($(window).width()<820) {
+     window.location.href = '?p='+$(this).attr("id-nav");
+     return false;
+    }
+      $("#blog .blog-entrys").css("display","none");
+      $("#blog .blog-single-ajax").empty();
+      $("#blog .blog-single-ajax").css('display', "block");
+      $.ajax({
+        cahe: false,
+        url: "blog_single.php",
+        type: "POST",
+        data: "ID="+$(this).attr("id-nav"),
+        success: function(data){
+            setTimeout( function() {
+              $("#blog .blog-single-ajax").html(data);
+              $(".loading").fadeOut("fast");
+              }, 1000);
+        },
+        beforeSend: function(){
+           var randomIMG = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+           $("#blog .loading").css("background-image", "url(./wp-content/themes/yolive/images/loader_white_"+randomIMG+".gif)");
+           $("#blog .loading").css("left",  $("#blog").width() / 2 - 92);
+           $("#blog .loading").css("top",  $("#blog").height() / 2 - 92);
+           $("#blog .loading").fadeIn("fast");
+        }
+      });
+
+      var target_offset = $("#blog").offset();
+      var target_top = target_offset.top;
+      var target_total = target_top-45;
+      $('html,body').animate({scrollTop : target_total}, 1000);
+});
+</script>
+<div class="entry" id-nav="670">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2014/01/awwwards-jury-carlos.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>We LAUNCHED A NEW SITE!</h2>
+     <span class="date">——<em>MARCH 3, 2015</em>——</span>
+     <p>We are happy to take our company in a new direction. Still the same ole folks but with a new mission! </p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="654">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2013/12/distantsounds-fea2.png" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>THIS IS A TITLE</h2>
+     <span class="date">——<em>February 23, 2015</em>——</span>
+     <p>This is a test blog article entry. </p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="584">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2013/06/destac_awww_cert.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>THIS IS ANOTHER TITLE</h2>
+     <span class="date">——<em>February 15, 2015</em>——</span>
+     <p>This is another test article paragrah entry.</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="547">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2013/06/destac_awww.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>THIS IS A TITLE</h2>
+     <span class="date">——<em>February 9, 2015</em>——</span>
+     <p>This is another paragraph that will fill in a article entry.</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="533">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2013/06/cover1.png" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>THIS IS A TITLE</h2>
+     <span class="date">——<em>February 1, 2015</em>——</span>
+     <p>This is a paragraph to a blog article entry. Just a test.</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="186">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2013/05/382345_540665215964160_1279489183_nx.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>THIS IS A TITLE</h2>
+     <span class="date">——<em>January 25, 2015</em>——</span>
+     <p>This is a test blog entry article.</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<!--<div class="entry" id-nav="189">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2012/11/cortometraje_dificildeocultar1.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>Cortometraje Difícil de Ocultar</h2>
+     <span class="date">——<em>November 9, 2012</em>——</span>
+     <p>Un cortometraje el que tuve la oportunidad de participar como Escritor y Director.</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="486">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2012/09/documental_lasheroinas.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>Documental Hablan las Heroínas</h2>
+     <span class="date">——<em>September 11, 2012</em>——</span>
+     <p>La historia de dos mujeres se convirtieron en heroínas y lograron ganarle la batalla al Cáncer de Mama</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="194">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2012/05/cochino_navidarte.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>Navidarte se lleva ANDA de Oro</h2>
+     <span class="date">——<em>May 17, 2012</em>——</span>
+     <p>La primera edición de Navidarte recibió una estatuilla dorada en los Premios ANDA 2011.</p>
+    </td>
+    </tr>
+  </table>
+</div>
+<div class="entry" id-nav="109">
+  <div class="hover"><div class="cover"></div><img src="./wp-content/uploads/2012/05/fotografia_carlosmolina.jpg" width="343" height="301"></div>
+  <table>
+    <tr>
+    <td>
+     <h2>Fotografiando el Delta del Orinoco</h2>
+     <span class="date">——<em>May 16, 2012</em>——</span>
+     <p>Tenía años que no emprendía una cacería de fotos desde que me mude a Caracas hace como 4 años ya. </p>
+    </td>
+    </tr>
+  </table>
+</div> -->
