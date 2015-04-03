@@ -1,0 +1,19 @@
+.elresultado {
+    color: green;
+}
+.elresultado.success {
+    color: green;
+}
+.hide {
+    display: none !important;
+}
+#blog .blog-entrys.horizontal-only {
+    height: auto;
+    max-height: 400px;
+    overflow: auto;
+    width: 100%;
+}
+/*789*/
+@media (max-width: 767px) {
+
+}

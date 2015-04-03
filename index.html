@@ -20,6 +20,7 @@
 <link href="wp-content/themes/yolive/reseter.css" rel="stylesheet" type="text/css" />
 <link href="wp-content/themes/yolive/style.css" rel="stylesheet" type="text/css" />
 <link type="text/css" href="wp-content/themes/yolive/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+<link rel="stylesheet" href="wp-content/themes/yolive/venobox.css" type="text/css" media="screen" />
 <!-- Instagram Plugin -->
 <link rel="stylesheet" href="wp-content/themes/yolive//pongstagr.am.css">
 <script src="wp-content/themes/yolive/js/jquery-1.8.2.min.js"></script>
@@ -50,7 +51,8 @@ $('body').jpreLoader({
 });
 });
 </script>
-<style type="text/css">.loader-velo {
+<style type="text/css">
+    .loader-velo {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -75,6 +77,7 @@ $('body').jpreLoader({
 .thumbnail{width:300px; float:left;margin:0 20px;}
 </style>
 <link rel="stylesheet" href="wp-content/themes/yolive/swipebox.css">
+<link rel="stylesheet" href="wp-content/themes/yolive/ymp_style.css">
 </head>
 
 <body>
@@ -148,8 +151,8 @@ https://www.youtube.com/watch?v=VnoaWwfF9KQ …</p><p>I just started following @
 	        	<div class="rightText">
 	        	
 	        	<div style="width: 100%; overflow: hidden;">
-    <div style="width: 320px; float: left;">  <span><a href="#" class="portfolio-btn">Recap 2014</a></span> </div>
-    <div style="margin-left: 420px;">  <span><a href="#" class="portfolio-btn">Recap 2013</a> </span> </div>
+    <div style="width: 320px; float: left;">  <span><a class="portfolio-btn swipebox-video" rel="vimeo" href="https://vimeo.com/122059844?autoplay=1&title=0&byline=0&portrait=0">Recap 2014</a></span> </div>
+    <div style="margin-left: 340px;">  <span><a class="portfolio-btn swipebox-video" rel="vimeo" href="https://vimeo.com/122681205?autoplay=1&title=0&byline=0&portrait=0">Recap 2013</a> </span> </div>
 </div>
                    
 
@@ -162,7 +165,7 @@ https://www.youtube.com/watch?v=VnoaWwfF9KQ …</p><p>I just started following @
      		<div class="blog-single-ajax">
 
         	</div>
-			<div class="blog-entrys">
+			<div class="blog-entrys horizontal-only">
             	<div class="content">
 
 
@@ -190,13 +193,13 @@ https://www.youtube.com/watch?v=VnoaWwfF9KQ …</p><p>I just started following @
 	            <p><input name="budget" type="text" class="buget" value="BUDGET:"></p>
                 <p class="error asunto_txt"><p>
                 <input name="code" type="hidden" value="1">
-                <input type="submit" name="button" id="button" value=" SEND">
+                <input type="submit" name="button" id="button" value="SEND">
                 <div class="elresultado"></div>
             </form>
         </div>
          <div class="info-contacto">
         	<h2>———<span>E-MAIL</span>———</h2>
-            <p>info@blurredpictures.co</p>
+            <p>blurred.info@gmail.com</p>
         </div>
         </div>
     	<div id="map-canvas"></div>
@@ -208,6 +211,10 @@ https://www.youtube.com/watch?v=VnoaWwfF9KQ …</p><p>I just started following @
 <script src="wp-content/themes/yolive/js/functions.js" type="text/javascript" charset="utf-8">
 </script>
 <script src="wp-content/themes/yolive/js/pongstagr.am.js"></script>
+<!-- Add jQuery library -->
+<!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+<!-- Add venobox -->
+<script type="text/javascript" src="wp-content/themes/yolive/js/venobox.min.js"></script>
 
 <script>
 $(document).ready(function () {
@@ -263,7 +270,31 @@ $(window).scroll(function() {
 });*/
 </script>
 
+<script>
+	$(document).ready(function(){
 
+    /* default settings */
+    $('.venobox').venobox(); 
+
+
+    /* custom settings */
+    $('.venobox_custom').venobox({
+        framewidth: '400px',        // default: ''
+        frameheight: '300px',       // default: ''
+        border: '10px',             // default: '0'
+        bgcolor: '#5dff5e',         // default: '#fff'
+        titleattr: 'data-title',    // default: 'title'
+        numeratio: true,            // default: false
+        infinigall: true            // default: false
+    });
+
+    /* auto-open #firstlink on page load */
+    $("#firstlink").venobox().trigger('click');
+});
+</script>
+
+
+<script type="text/javascript" src="wp-content/themes/yolive/js/ymp_js.js"></script>
 
 </body>
 </html>

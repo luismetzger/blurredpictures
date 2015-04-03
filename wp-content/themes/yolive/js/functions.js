@@ -164,24 +164,7 @@ $(document).ready(function() {
         $("#work .details").css("margin-right", -$(window).width());
         $("#work .details .ficha").empty()
     }
-        $("#hablame").submit(function() {
-        $.ajax({
-            type: "POST",
-            url: "contacto-process.php",
-            data: $("form#hablame").serialize(),
-            beforeSend: function() {
-                $(".enviar").fadeOut("fast");
-                $(".borrar").fadeOut("fast");
-                $("#button").attr("value", "SENDING")
-            },
-            success: function(e) {
-                $(".enviar").fadeIn("fast");
-                $(".borrar").fadeIn("fast");
-                $(".elresultado").html(e)
-            }
-        });
-        return false
-    });
+
     if ($(window).height() > 400) {
         $("#home").css("height", $(window).height())
     }
